@@ -1,0 +1,175 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    /* ছবির মতো প্যাস্টেল গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
+    background: linear-gradient(135deg, #ffb3ba 0%, #ffdfba 50%, #bae1ff 100%);
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    position: relative;
+}
+
+/* --- নেভিগেশন বার স্টাইলিং --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+   
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 50px;
+    padding: 15px 30px;
+}
+
+.navbar .logo {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.navbar ul li a:hover {
+    opacity: 1;
+}
+
+.cta-button {
+    background: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* --- হিরো সেকশন স্টাইলিং --- */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 40px;
+}
+
+.text-content {
+    max-width: 50%;
+}
+
+.title {
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.description {
+    margin: 20px 0 30px 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.read-more-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.read-more-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* --- আবহাওয়া গ্রাফিক্স স্টাইলিং (সূর্য + মেঘ) --- */
+.weather-graphic {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform: scale(1.2); /* একটু বড় দেখানোর জন্য */
+}
+
+.cloud {
+    width: 250px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent cloud */
+    border-radius: 50px;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+}
+
+.cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    left: 30px;
+}
+
+.cloud::after {
+    width: 150px;
+    height: 150px;
+    top: -90px;
+    right: 20px;
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+    background-color: #ffc107; /* Yellow Sun */
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 10;
+}
+
+/* রে বা রশ্মি */
+.sun::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* ছবির মতো রশ্মি তৈরির জন্য শ্যাডো ব্যবহার করা যেতে পারে */
+    box-shadow:
+        0 0 0 10px rgba(255, 193, 7, 0.4),
+        0 0 0 25px rgba(255, 193, 7, 0.2),
+        0 0 0 40px rgba(255, 193, 7, 0.1);
+    border-radius: 50%;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Display</title>
+    <style>
+        #weatherImg {
+            width: 150px;
+            margin-top: 15px;
+            display: none;
+        }
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Select District</h2>
+    <select id="districtSelect">
+        <option value="">Select District</option>
+        <option value="Dhaka">Dhaka</option>
+        <option value="Sylhet">Sylhet</option>
+        <option value="Khulna">Khulna</option>
+    </select>
+
+    <div id="error"></div>
+
+    <img id="weatherImg" src="" alt="weather">
+
+    <script>
+        // -------------------------------
+        // Array of Objects (District Data)
+        // -------------------------------
+        const weatherData = [
+            { district: "Dhaka", temperature: 32, condition: "Sunny", image: "img/Sunny.jpg" },
+            { district: "Sylhet", temperature: 27, condition: "Rainy", image: "rainy.png" },
+            { district: "Khulna", temperature: 30, condition: "Cloudy", image: "cloudy.png" }
+        ];
+
+        const selectBox = document.getElementById("districtSelect");
+        const img = document.getElementById("weatherImg");
+        const error = document.getElementById("error");
+
+        selectBox.addEventListener("change", function () {
+            const selectedDistrict = this.value;
+
+            if (selectedDistrict === "") {
+                img.style.display = "none";
+                img.src = "";
+                error.textContent = "plage select a district";
+                return;
+            }
+
+            error.textContent = ""; // clear previous error
+
+            const info = weatherData.find(item => item.district === selectedDistrict);
+
+            if (info) {
+                img.src = info.image;
+                img.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>
